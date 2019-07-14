@@ -39,7 +39,7 @@ class SingleTCPHandler(socketserver.BaseRequestHandler):
             temperature = payload[5]
 
             # log received report
-            logging.info("Got report from: %s - %s mpsas; %s °C", serial, brightness, temperature)
+            logging.info("%s: Got report from: %s - %s mpsas; %s °C", current_time, serial, brightness, temperature)
 
             # prepare data for influx
             influxdata = [{
